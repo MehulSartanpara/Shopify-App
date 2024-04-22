@@ -43,9 +43,65 @@ api_access = true
 # your extension. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
 
-# [extensions.settings]
-# [[extensions.settings.fields]]
-# key = "banner_title"
-# type = "single_line_text_field"
-# name = "Banner title"
-# description = "Enter a title for the banner"
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "banner_title"
+type = "single_line_text_field"
+name = "Banner Title"
+description = "Enter the title for the banner"
+
+[[extensions.settings.fields]]
+key = "banner_description"
+type = "multi_line_text_field"
+name = "Banner Description"
+description = "Enter the description for the banner. You can include a link in the description using the format {{linkLabel|Link}}. For example, {{Terms and Conditions|https://www.google.com}}."
+
+[[extensions.settings.fields]]
+key = "collapsible"
+type = "boolean"
+name = "Collapsible Description"
+description = "Allow customers to expand or collapse the banner description"
+
+[[extensions.settings.fields]]
+key = "status"
+type = "single_line_text_field"
+name = "Banner Status"
+[[extensions.settings.fields.validations]]
+name = "choices"
+value = "[\"info\", \"success\", \"warning\", \"critical\"]"
+
+[[extensions.settings.fields]]
+key = "description_size"
+type = "single_line_text_field"
+name = "Banner Description Font Size"
+description = "Select the font size for the banner description"
+[[extensions.settings.fields.validations]]
+name = "choices"
+value = "[\"extraSmall\", \"small\", \"base\", \"large\", \"extraLarge\", \"medium\"]"
+
+[[extensions.settings.fields]]
+key = "description_color"
+type = "single_line_text_field"
+name = "Banner Description Font Color"
+description = "Select the font color for the banner description"
+[[extensions.settings.fields.validations]]
+name = "choices"
+value = "[\"base\", \"accent\", \"decorative\", \"interactive\", \"subdued\", \"info\", \"success\", \"warning\", \"critical\", \"monochrome\"]"
+
+[[extensions.settings.fields]]
+key = "description_emphasis"
+type = "single_line_text_field"
+name = "Banner Description Font Weight"
+description = "Select the font weight for the banner description"
+[[extensions.settings.fields.validations]]
+name = "choices"
+value = "[\"normal\", \"italic\", \"bold\"]"
+
+[[extensions.settings.fields]]
+key = "description_link_color"
+type = "single_line_text_field"
+name = "Banner Description Link Color"
+description = "Choose the color for the links in the banner description."
+[[extensions.settings.fields.validations]]
+name = "choices"
+value = "[\"base\", \"accent\", \"decorative\", \"interactive\", \"subdued\", \"info\", \"success\", \"warning\", \"critical\", \"monochrome\"]"

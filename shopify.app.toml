@@ -3,10 +3,12 @@
 client_id = "1277e75caa53dc7b4536023c7032afc0"
 name = "Test Extension"
 handle = "test-extension-74"
-application_url = "https://example.com/"
+application_url = "https://earrings-gratis-spot-my.trycloudflare.com"
 embedded = true
 
 [build]
+automatically_update_urls_on_dev = true
+dev_store_url = "mehul-checkout-extensions.myshopify.com"
 include_config_on_deploy = true
 
 [access_scopes]
@@ -14,7 +16,11 @@ include_config_on_deploy = true
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://earrings-gratis-spot-my.trycloudflare.com/auth/callback",
+  "https://earrings-gratis-spot-my.trycloudflare.com/auth/shopify/callback",
+  "https://earrings-gratis-spot-my.trycloudflare.com/api/auth/callback"
+]
 
 [webhooks]
 api_version = "2024-04"
